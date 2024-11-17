@@ -18,20 +18,18 @@ import { Image } from "@nextui-org/image";
 
 export default async function Header({ token }: { token: string }) {
 
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    // const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const pathname = usePathname();
 
     return (
-        <>
-            {/* <!-- Desktop Navbar --> */}
-            <Navbar isBordered
+            <Navbar 
                 maxWidth="full"
-                isMenuOpen={isMenuOpen}
-                onMenuOpenChange={setIsMenuOpen}
-                className="lg:flex max-lg:hidden"
+                // isMenuOpen={isMenuOpen}
+                // onMenuOpenChange={setIsMenuOpen}
+                position="sticky"
             >
                 <NavbarBrand>
-                    <h1 className="text-2xl font-bold">SnapSpot</h1>
+                    <h1 className="text-2xl font-bold">Suncoast Systems</h1>
                 </NavbarBrand>
                 <NavbarContent className="gap-4" justify="center">
                     {Constants.navLinks.map((item, index) => {
@@ -51,47 +49,5 @@ export default async function Header({ token }: { token: string }) {
                     
                 </NavbarContent>
             </Navbar>
-
-            {/* <!-- Mobile Navbar --> */}
-            <Navbar
-                className="lg:hidden max-md:flex"
-                classNames={{
-                    item: [
-                        "items-center",
-                        // "data-[active=true]:after:content-['']",
-                        // "data-[active=true]:after:absolute",
-                        // "data-[active=true]:after:bottom-0",
-                        // "data-[active=true]:after:left-0",
-                        // "data-[active=true]:after:right-0",
-                        // "data-[active=true]:after:h-[2px]",
-                        // "data-[active=true]:after:rounded-[2px]",
-                        // "data-[active=true]:after:bg-primary",
-                    ],
-                }}
-                isBordered={true}
-                maxWidth="full"
-            >
-                <NavbarContent
-                    className="w-full gap-8"
-                    justify="center"
-                >
-                    {Constants.navLinks.map((item, index) => {
-                        return (
-                            <NavbarItem isActive={pathname === item.link}>
-                                <Link
-                                    href={pathname === item.link ? "#" : item.link}
-                                    className={pathname === item.link ? "text-primary" : "text"}
-                                >
-                                    {item.title}
-                                </Link>
-                            </NavbarItem>
-                        );
-                    })}
-                    <NavbarItem>
-                        
-                    </NavbarItem>
-                </NavbarContent>
-            </Navbar>
-        </>
     );
 };

@@ -53,23 +53,16 @@ export default async function RootLayout({
     { name: 'x-vercel-ip-country-region', value: headerList.get('x-vercel-ip-country-region') || '' },
   ];
   return (
-    <html lang="en" className="h-svh w-full max-lg:overflow-hidden max-lg:fixed">
+    <html lang="en">
       <head>
       </head>
-      <body className="h-svh w-full">
+      <body>
         <Providers token={token}>
-          <div className="max-lg:hidden">
-            <Header token={token} />
-          </div>
+          <Header token={token} />
           <main className="text-foreground bg-background lg:h-dvh max-lg:h-[calc(100svh-4rem)]">
             {children}
           </main>
-          <div className="lg:hidden h-16">
-            <Header token={token} />
-          </div>
-          <div className="max-lg:hidden">
-            <Footer />
-          </div>
+          <Footer />
         </Providers>
       </body>
       <GoogleAnalytics gaId="G-ELP6DTZ8ZC" />
