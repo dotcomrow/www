@@ -7,8 +7,6 @@ import Footer from "@component/layout/footer/Footer";
 import "ol/ol.css";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from "next/script";
-import ErrorDialog from "@component/modals/error/ErrorDialog";
-import NotificationDialog from "@component/modals/notification/NotificationDialog";
 
 export const runtime = 'edge';
 
@@ -59,7 +57,7 @@ export default async function RootLayout({
       <head>
       </head>
       <body className="h-svh w-full">
-        <Providers token={token} headersList={locationHeaders}>
+        <Providers token={token}>
           <div className="max-lg:hidden">
             <Header token={token} />
           </div>
@@ -72,8 +70,6 @@ export default async function RootLayout({
           <div className="max-lg:hidden">
             <Footer />
           </div>
-          <ErrorDialog />
-          <NotificationDialog />
         </Providers>
       </body>
       <GoogleAnalytics gaId="G-8MHBD6Z0FG" />
