@@ -11,11 +11,11 @@ import Script from "next/script";
 export const runtime = 'edge';
 
 export const metadata: Metadata = {
-  title: "SnapSpot",
-  description: "SnapSpot lets you request a picture of any location in the world.",
+  title: "Suncoast Systems",
+  description: "Suncoast Systems is a software development company that specializes in web and mobile applications.",
   generator: "Next.js",
   manifest: "/manifest.json",
-  keywords: ["nextjs", "next14", "pwa", "next-pwa"],
+  keywords: ["nextjs", "next15", "pwa", "next-pwa"],
   authors: [
     {
       name: "DotcomRow",
@@ -72,7 +72,7 @@ export default async function RootLayout({
           </div>
         </Providers>
       </body>
-      <GoogleAnalytics gaId="G-8MHBD6Z0FG" />
+      <GoogleAnalytics gaId="G-ELP6DTZ8ZC" />
       <Script
         dangerouslySetInnerHTML={{
           __html: `
