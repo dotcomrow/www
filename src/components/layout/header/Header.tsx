@@ -1,6 +1,5 @@
 "use client";
 
-import ProfileAvatar from "@component/profile/ProfileAvatar";
 import {
     Navbar,
     NavbarBrand,
@@ -49,7 +48,7 @@ export default async function Header({ token }: { token: string }) {
                     })}
                 </NavbarContent>
                 <NavbarContent as="div" justify="end" className="w-2/5 flex">
-                    <ProfileAvatar />
+                    
                 </NavbarContent>
             </Navbar>
 
@@ -76,61 +75,20 @@ export default async function Header({ token }: { token: string }) {
                     className="w-full gap-8"
                     justify="center"
                 >
-                    {token.length > 0 ? (
-                        <>
-                            {Constants.mobileLoggedInLinks.map((item, index) => {
-                                return (
-                                    <NavbarItem isActive={pathname === item.link}>
-                                        <Button
-                                            href={pathname === item.link ? "#" : item.link}
-                                            as={Link}
-                                            color="primary"
-                                            className={pathname === item.link ? "text-primary" : "text"}
-                                            variant="light"
-                                            size="lg"
-                                            isIconOnly
-                                            isDisabled={pathname === item.link ? true : false}
-                                        >
-                                            <Image
-                                                src={item.icon}
-                                                alt={item.title}
-                                                width={50}
-                                                height={50}
-                                            />
-                                        </Button>
-                                    </NavbarItem>
-                                );
-                            })}
-                        </>
-                    ) : (
-                        <>
-                            {Constants.mobileLoggedOutLinks.map((item, index) => {
-                                return (
-                                    <NavbarItem isActive={pathname === item.link}>
-                                        <Button
-                                            href={pathname === item.link ? "#" : item.link}
-                                            as={Link}
-                                            color="primary"
-                                            className={pathname === item.link ? "text-primary" : "text"}
-                                            variant="light"
-                                            size="lg"
-                                            isIconOnly
-                                            isDisabled={pathname === item.link ? true : false}
-                                        >
-                                            <Image
-                                                src={item.icon}
-                                                alt={item.title}
-                                                width={50}
-                                                height={50}
-                                            />
-                                        </Button>
-                                    </NavbarItem>
-                                );
-                            })}
-                        </>
-                    )}
+                    {Constants.navLinks.map((item, index) => {
+                        return (
+                            <NavbarItem isActive={pathname === item.link}>
+                                <Link
+                                    href={pathname === item.link ? "#" : item.link}
+                                    className={pathname === item.link ? "text-primary" : "text"}
+                                >
+                                    {item.title}
+                                </Link>
+                            </NavbarItem>
+                        );
+                    })}
                     <NavbarItem>
-                        <ProfileAvatar />
+                        
                     </NavbarItem>
                 </NavbarContent>
             </Navbar>
