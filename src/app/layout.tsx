@@ -7,6 +7,7 @@ import Footer from "@component/layout/footer/Footer";
 import "ol/ol.css";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from "next/script";
+import "@styles/global.css";
 
 export const runtime = 'edge';
 
@@ -53,13 +54,13 @@ export default async function RootLayout({
     { name: 'x-vercel-ip-country-region', value: headerList.get('x-vercel-ip-country-region') || '' },
   ];
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
       </head>
       <body>
         <Providers token={token}>
           <Header token={token} />
-          <main className="text-foreground bg-background lg:h-dvh max-lg:h-[calc(100svh-4rem)]">
+          <main className="lg:h-dvh max-lg:h-[calc(100svh-4rem)]">
             {children}
           </main>
           <Footer />
