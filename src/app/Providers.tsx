@@ -6,7 +6,7 @@ export function Providers({ children, token }: { children: React.ReactNode, toke
     return (
         <StoreProvider token={token}>
             <NextUIProvider>
-                <NextThemesProvider attribute="class" defaultTheme="light" enableSystem={true} >
+                <NextThemesProvider attribute="class" enableSystem={true} >
                     {children}
                 </NextThemesProvider>
             </NextUIProvider>
