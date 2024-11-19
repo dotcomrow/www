@@ -18,36 +18,53 @@ import { Image } from "@nextui-org/image";
 
 export default async function Header({ token }: { token: string }) {
 
-    // const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const pathname = usePathname();
 
     return (
-            <Navbar 
-                maxWidth="full"
-                // isMenuOpen={isMenuOpen}
-                // onMenuOpenChange={setIsMenuOpen}
-                position="sticky"
-            >
+        <Navbar
+            maxWidth="full"
+            isMenuOpen={isMenuOpen}
+            onMenuOpenChange={setIsMenuOpen}
+        >
+            <NavbarContent className="w-2/3">
+                <NavbarMenuToggle
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    className="lg:hidden"
+                />
                 <NavbarBrand>
-                    <h1 className="text-2xl font-bold">Suncoast Systems</h1>
+                    <Image src="/favicon.svg" width={40} height={40} alt="logo" />
                 </NavbarBrand>
-                <NavbarContent className="gap-4" justify="center">
-                    {Constants.navLinks.map((item, index) => {
-                        return (
-                            <NavbarItem isActive={pathname === item.link}>
-                                <Link
-                                    href={pathname === item.link ? "#" : item.link}
-                                    className={pathname === item.link ? "text-primary" : "text"}
-                                >
-                                    {item.title}
-                                </Link>
-                            </NavbarItem>
-                        );
-                    })}
-                </NavbarContent>
-                <NavbarContent as="div" justify="end" className="w-2/5 flex">
-                    
-                </NavbarContent>
-            </Navbar>
+            </NavbarContent>
+
+            <NavbarContent className="gap-4 max-lg:hidden" justify="center">
+                {Constants.navLinks.map((item, index) => {
+                    return (
+                        <NavbarItem isActive={pathname === item.link}>
+                            <Link
+                                href={pathname === item.link ? "#" : item.link}
+                                className={pathname === item.link ? "text-primary" : "text"}
+                            >
+                                {item.title}
+                            </Link>
+                        </NavbarItem>
+                    );
+                })}
+            </NavbarContent>
+            <NavbarMenu className="lg:hidden">
+                {Constants.navLinks.map((item, index) => {
+                    return (
+                        <NavbarMenuItem key={`${item}-${index}`} isActive={pathname === item.link}>
+                            <Link
+                                href={pathname === item.link ? "#" : item.link}
+                                className={pathname === item.link ? "text-primary" : "text"}
+                            >
+                                {item.title}
+                            </Link>
+                        </NavbarMenuItem>
+                    );
+                })}
+            </NavbarMenu>
+        </Navbar>
     );
 };
