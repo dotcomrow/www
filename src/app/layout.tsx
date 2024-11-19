@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import 'tailwindcss/tailwind.css';
 import { Providers } from "./Providers";
-import { cookies, headers } from 'next/headers'
+import { headers } from 'next/headers'
 import Header from "@component/layout/header/Header";
 import Footer from "@component/layout/footer/Footer";
-import "ol/ol.css";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from "next/script";
 import "@styles/global.css";
@@ -39,9 +38,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
   const headerList = await headers();
-  var token = cookieStore.get('token')?.value || '';
+  // read the custom x-url header
+  const header_url = headerList.get('x-url') || "";
+
   var locationHeaders = [
     { name: 'x-vercel-ip-city', value: headerList.get('x-vercel-ip-city') || '' },
     { name: 'x-vercel-ip-country', value: headerList.get('x-vercel-ip-country') || '' },
@@ -53,9 +53,9 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
       </head>
-      <body>
-        <Providers token={token}>
-          <Header token={token} />
+      <body className={header_url}>
+        <Providers>
+          <Header/>
           <main>
             {children}
           </main>

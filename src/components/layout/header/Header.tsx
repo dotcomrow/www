@@ -16,7 +16,7 @@ import { default as Constants } from "@utils/constants";
 import { Button, ButtonGroup } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 
-export default function Header({ token }: { token: string }) {
+export default function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const pathname = usePathname();

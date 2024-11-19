@@ -2,9 +2,9 @@ import { NextUIProvider } from "@nextui-org/system";
 import { StoreProvider } from "./StoreProvider";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
-export function Providers({ children, token }: { children: React.ReactNode, token: string }) {
+export function Providers({ children }: { children: React.ReactNode }) {
     return (
-        <StoreProvider token={token}>
+        <StoreProvider>
             <NextUIProvider>
                 <NextThemesProvider attribute="class" enableSystem={true} >
                     {children}
