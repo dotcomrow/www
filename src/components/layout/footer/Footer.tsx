@@ -8,12 +8,12 @@ export default function Footer() {
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="https://www.suncoast.systems" className="flex items-center">
-                            <img src="favicon.svg" className="h-16 me-3" alt="Suncoast Systems Logo" />
+                            <img src="favicon.svg" className="h-16" alt="Suncoast Systems Logo" />
                             <span className="self-center text-2xl font-semibold whitespace-nowrap">Suncoast Systems</span>
                         </a>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                        <div>
+                        {/* <div>
                             <h2 className="mb-6 text-sm font-semibold  uppercase text-base-content">Resources</h2>
                             <ul className="text-neutral-content font-medium">
                                 <li className="mb-4">
@@ -23,7 +23,7 @@ export default function Footer() {
                                     <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                         <div>
                             <h2 className="mb-6 text-sm font-semibold  uppercase text-base-content">Follow us</h2>
                             <ul className="text-neutral-content font-medium">

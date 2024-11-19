@@ -16,7 +16,7 @@ import { default as Constants } from "@utils/constants";
 import { Button, ButtonGroup } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 
-export default async function Header({ token }: { token: string }) {
+export default function Header({ token }: { token: string }) {
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const pathname = usePathname();
@@ -27,17 +27,17 @@ export default async function Header({ token }: { token: string }) {
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
         >
-            <NavbarContent className="w-2/3">
-                <NavbarMenuToggle
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className="lg:hidden"
-                />
+            <NavbarContent className="lg:hidden" justify="start">
+                <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
                 <NavbarBrand>
                     <Image src="/favicon.svg" width={40} height={40} alt="logo" />
                 </NavbarBrand>
             </NavbarContent>
 
-            <NavbarContent className="gap-4 max-lg:hidden" justify="center">
+            <NavbarContent className="gap-4 max-lg:hidden" justify="start">
+                <NavbarBrand>
+                    <Image src="/favicon.svg" width={40} height={40} alt="logo" />
+                </NavbarBrand>
                 {Constants.navLinks.map((item, index) => {
                     return (
                         <NavbarItem isActive={pathname === item.link}>
@@ -51,13 +51,15 @@ export default async function Header({ token }: { token: string }) {
                     );
                 })}
             </NavbarContent>
-            <NavbarMenu className="lg:hidden">
+
+            <NavbarMenu>
                 {Constants.navLinks.map((item, index) => {
                     return (
-                        <NavbarMenuItem key={`${item}-${index}`} isActive={pathname === item.link}>
+                        <NavbarMenuItem isActive={pathname === item.link}>
                             <Link
                                 href={pathname === item.link ? "#" : item.link}
                                 className={pathname === item.link ? "text-primary" : "text"}
+                                onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.title}
                             </Link>
