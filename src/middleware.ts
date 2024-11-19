@@ -9,5 +9,13 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     if (pathname === "/") {
         return NextResponse.redirect(new URL("/home", req.nextUrl));
     }
-    return NextResponse.next();
+    const requestHeaders = new Headers(req.headers);
+    requestHeaders.set('x-url', pathname.replace('/', ''));
+
+    return NextResponse.next({
+        request: {
+            // Apply new request headers
+            headers: requestHeaders,
+        }
+    });
 }
