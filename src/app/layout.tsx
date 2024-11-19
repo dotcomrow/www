@@ -56,7 +56,7 @@ export default async function RootLayout({
       <body>
         <Providers token={token}>
           <Header token={token} />
-          <main className="lg:h-dvh max-lg:h-[calc(100svh-4rem)]">
+          <main>
             {children}
           </main>
           <Footer />

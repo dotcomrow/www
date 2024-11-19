@@ -31,6 +31,7 @@ export default function Footer() {
                                     <Link 
                                         href="https://github.com/dotcomrow"
                                         showAnchorIcon={true}
+                                        className="hover:underline"
                                     >
                                         Github
                                     </Link>
@@ -44,7 +45,12 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold  uppercase text-base-content">Legal</h2>
                             <ul className="text-base-content font-medium">
                                 <li className="mb-4">
-                                    <a href="#" className="hover:underline">Privacy Policy</a>
+                                    <Link 
+                                        href="/privacy" 
+                                        className="hover:underline"
+                                    >
+                                        Privacy Policy
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:underline">Terms &amp; Conditions</a>
