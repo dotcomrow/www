@@ -1,4 +1,4 @@
-import Link from "next/link";
+import {Link} from "@nextui-org/link";
 
 export default function Footer() {
 
@@ -26,9 +26,14 @@ export default function Footer() {
                         </div> */}
                         <div>
                             <h2 className="mb-6 text-sm font-semibold  uppercase text-base-content">Follow us</h2>
-                            <ul className="text-neutral-content font-medium">
+                            <ul className="text-base-content font-medium">
                                 <li className="mb-4">
-                                    <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
+                                    <Link 
+                                        href="https://github.com/dotcomrow"
+                                        showAnchorIcon={true}
+                                    >
+                                        Github
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
@@ -37,7 +42,7 @@ export default function Footer() {
                         </div>
                         <div>
                             <h2 className="mb-6 text-sm font-semibold  uppercase text-base-content">Legal</h2>
-                            <ul className="text-neutral-content font-medium">
+                            <ul className="text-base-content font-medium">
                                 <li className="mb-4">
                                     <a href="#" className="hover:underline">Privacy Policy</a>
                                 </li>
