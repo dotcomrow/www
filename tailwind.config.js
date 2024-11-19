@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import { nextui } from "@nextui-org/react";
 import daisyui from "daisyui"
+import typography from "@tailwindcss/typography";
 
 export default {
   content: [
@@ -13,6 +14,7 @@ export default {
       // prefix: "nextui", // prefix for themes variables
       addCommonColors: true, // override common colors (e.g. "blue", "green", "pink").
     }),
+    typography,
     daisyui,
   ],
 
