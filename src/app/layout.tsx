@@ -39,8 +39,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const headerList = await headers();
-  // read the custom x-url header
-  const header_url = headerList.get('x-url') || "";
 
   var locationHeaders = [
     { name: 'x-vercel-ip-city', value: headerList.get('x-vercel-ip-city') || '' },
@@ -53,7 +51,7 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
       </head>
-      <body className={header_url}>
+      <body>
         <Providers>
           <Header/>
           <main>
