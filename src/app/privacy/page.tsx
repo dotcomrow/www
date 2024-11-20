@@ -5,7 +5,7 @@ export const runtime = 'edge';
 export default async function Home() {
     return (
         <>
-            <div className="w-full items-center justify-center flex flex-col">
+            <div className="w-full items-center justify-center flex flex-col mt-4">
                 <div className="flex flex-col gap-4 h-full w-3/4 prose lg:prose-xl">
                     <div className="flex flex-col">
                         <h1>Privacy Policy</h1>
