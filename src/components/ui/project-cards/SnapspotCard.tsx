@@ -28,11 +28,11 @@ export default function SnapspotCard() {
             <div className="flex justify-between items-start mb-4">
               <div className="flex flex-col gap-0">
                 <h1 className="text-large font-medium mt-2">Snapspot (Unfinished)</h1>
-                <p className="text-small text-foreground/80">Snapspot is a project to allow users to request a picture of any location.  This goal of this project was mainly to learn NextJs and supporting technologies.</p>
+                <p className="text-small text-foreground/80 pb-3">Snapspot is a project to allow users to request a picture of any location.  This goal of this project was mainly to learn NextJs and supporting technologies.</p>
               </div>
             </div>
 
-            <div className="flex absolute bottom-0">
+            <div className="flex absolute bottom-0 mb-3">
               <Link href="https://snapspot.suncoast.systems">Visit Snapspot</Link>
             </div>
           </div>
