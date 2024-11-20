@@ -4,9 +4,9 @@
 
 
 body {
-    background-image: radial-gradient(ellipse farthest-corner at 0 50%, #ffffff 0%, #ffffff 55%, #4e95d3 100%);
+    background-image: radial-gradient(ellipse farthest-corner at 0 50%, #ffffff 0%, #ffffff 55%, #4e95d3 160%);
 }
 
 .dark body {
-    background-image: radial-gradient(ellipse farthest-corner at 0 50%, #1a202c 0%, #1a202c 55%, #2d3748 100%);
+    background-image: radial-gradient(ellipse farthest-corner at 0 50%, #1a202c 0%, #1a202c 55%, #2d3748 160%);
 }
