@@ -21,8 +21,8 @@ export default async function Home() {
                         <h2>Who We Are</h2>
                         <p>This website is operated by:</p>
                         <ul>
-                            <li>Chris Lyons</li>
-                            <li>Address: 2692 Enterprise Rd E, Clearwater FL, 33759 USA</li>
+                            <li>Avryi</li>
+                            <li>Address: 7901 4th St N, STE 300, St. Petersburg FL, 33702 USA</li>
                         </ul>
                         <p>Our email address is <a href="mailto:administrator@suncoast.systems">administrator@suncoast.systems</a>.</p>
                         <h2>What Personal Data We Collect and Why We Collect It</h2>
